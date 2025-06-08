@@ -2,6 +2,8 @@
 
 # 🐙 Dokapi – Tor-Native Recon Toolkit
 
+![dokapi](https://github.com/user-attachments/assets/5ab2b23b-6139-4c3d-822b-8fe05dc53650)
+
 A lightweight, privacy-aware reconnaissance tool for researchers, analysts, and OPSEC-conscious operators. Runs natively through Tor with modular scans and a clean CLI.
 
 ---
