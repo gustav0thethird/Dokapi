@@ -1,0 +1,8 @@
+site_name: Dokapi
+site_description: Source of truth. Mirrored out to github.com/gustav0thethird/Dokapi.
+
+plugins:
+  - techdocs-core
+
+nav:
+  - Home: index.md
