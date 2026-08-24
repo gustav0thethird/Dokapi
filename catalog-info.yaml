@@ -2,15 +2,22 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: Dokapi
-  description: Source of truth. Mirrored out to github.com/gustav0thethird/Dokapi.
+  description: Terminal-first reconnaissance shell
   annotations:
-    # Tells TechDocs the docs live in this repo, built from mkdocs.yml.
     backstage.io/techdocs-ref: dir:.
     gitlab.com/project-slug: yditj/projects/apps/Dokapi
+  links:
+    - url: https://github.com/gustav0thethird/Dokapi
+      title: GitHub
+      icon: github
   tags:
+    - python
+    - recon
+    - cli
+    - security
     - apps
 spec:
-  type: service
+  type: tool
   lifecycle: production
   owner: gtully
   system: apps

@@ -1,8 +1,9 @@
 site_name: Dokapi
-site_description: Source of truth. Mirrored out to github.com/gustav0thethird/Dokapi.
+site_description: Terminal-first reconnaissance shell
 
 plugins:
   - techdocs-core
 
 nav:
   - Home: index.md
+  - Readme: readme.md
