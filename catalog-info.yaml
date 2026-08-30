@@ -2,20 +2,21 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: Dokapi
-  description: Terminal-first reconnaissance shell
+  description: Dokapi is a Tor-native reconnaissance toolkit designed for stealthy
+    network research and auditing.
   annotations:
     backstage.io/techdocs-ref: dir:.
     gitlab.com/project-slug: yditj/projects/apps/Dokapi
   links:
-    - url: https://github.com/gustav0thethird/Dokapi
-      title: GitHub
-      icon: github
+  - url: https://github.com/gustav0thethird/Dokapi
+    title: GitHub
+    icon: github
   tags:
-    - python
-    - recon
-    - cli
-    - security
-    - apps
+  - tor
+  - recon
+  - cli
+  - privacy
+  - security
 spec:
   type: tool
   lifecycle: production
