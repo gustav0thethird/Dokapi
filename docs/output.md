@@ -1,44 +1,32 @@
 # Output
 
-Dokapi provides various output formats and reporting capabilities to facilitate the analysis of reconnaissance data. Below are the details regarding these features.
+Dokapi provides various output formats and reporting capabilities to facilitate the analysis of reconnaissance data. The primary output formats include console output and CSV files.
 
-## Output Formats
+## Console Output
 
-### CSV Reporting
+When running Dokapi, the results of API hunts and port scans are displayed directly in the terminal. This immediate feedback allows users to quickly assess the findings without needing to navigate through files. The console output includes:
 
-Dokapi supports CSV output for both API hunting and port scanning functionalities. When enabled, the results of these operations are saved in a structured CSV format, which can be easily imported into spreadsheet applications for further analysis.
+- **API Hunt Results**: After initiating an API hunt, the results are printed to the console, detailing the discovered APIs associated with the target.
+- **Port Scan Results**: Following a port scan, the open ports are listed in the console. If no open ports are found, a message indicating this is displayed.
 
-- **Directory**: The default directory for CSV reports is `./Reports`.
-- **File Naming**: The filenames are generated dynamically based on the type of scan and the target, ensuring clarity and organization.
+## CSV Output
 
-### Console Output
+Dokapi also supports exporting results to CSV files, which can be useful for further analysis or record-keeping. The CSV output includes:
 
-In addition to CSV files, Dokapi provides real-time feedback in the console during operations. This includes:
+- **Port Scan Results**: If the CSV output feature is enabled, the results of the port scan are saved in a CSV file. The file includes the following columns:
+  - **Target**: The IP address or URL of the scanned target.
+  - **Date**: The timestamp of when the scan was performed.
+  - **Type**: The type of scan conducted (e.g., "Port Scan").
+  - **Result**: The specific results of the scan, such as the open ports found.
 
-- **API Hunt Results**: As the API hunt progresses, results are printed directly to the console, indicating the status of the hunt.
-- **Port Scan Results**: Open ports are displayed in real-time, allowing users to monitor the scanning process.
+### Enabling CSV Output
 
-## Reporting Capabilities
+To enable CSV output, ensure that the `csv_output_enabled` setting is set to `True` in the configuration. The results will be saved in the specified directory, which defaults to `./Reports`. If the directory does not exist, it will be created automatically.
 
-### API Hunt Reporting
+### File Naming
 
-When performing an API hunt, Dokapi outputs the results directly to the console. The specific details of the APIs discovered are not explicitly documented in the provided files, but the process is initiated with a prompt for the target URL or IP.
-
-### Port Scan Reporting
-
-The port scanning functionality includes comprehensive reporting:
-
-- **Open Ports**: After scanning, the open ports are listed in the console output.
-- **CSV Output**: If CSV output is enabled, the results of the port scan are saved in a CSV file, including:
-  - Target IP or URL
-  - Date and time of the scan
-  - Type of scan performed
-  - Results (open ports or a message indicating no open ports found)
-
-### Error Handling
-
-In the event of an error during the scanning processes, an error message is printed to the console, providing immediate feedback on the issue encountered.
+The CSV files are generated with a timestamped filename format, allowing for easy identification of when the scan was performed. The naming convention follows the pattern: `portscan_<target>_<timestamp>.csv`.
 
 ## Summary
 
-Dokapi's output formats and reporting capabilities are designed to provide users with both immediate feedback and long-term data storage options. The combination of console output and CSV reporting allows for flexible analysis and record-keeping of reconnaissance activities.
+Dokapi's output capabilities are designed to provide both immediate feedback through console output and long-term storage through CSV files. This dual approach allows users to efficiently analyze reconnaissance data in real-time while also maintaining records for future reference.

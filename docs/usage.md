@@ -2,57 +2,58 @@
 
 ## Running Dokapi
 
-To run Dokapi, you can use either the command line interface or the interactive shell. Follow the instructions below for each method.
+To run Dokapi, you can use either the command line interface or the provided shell script. Follow the instructions below for both methods.
 
 ### Command Line Interface
 
-1. **Open your terminal.**
-2. **Navigate to the directory containing `dokapi.py`.**
-3. **Run the script:**
+1. **Open a terminal.**
+2. **Navigate to the directory** where Dokapi is located.
+3. **Run the following command:**
+
    ```bash
    python dokapi.py
    ```
+
 4. **Input the required information:**
    - Enter the target URL or IP address when prompted.
-   - Choose whether to use the Tor proxy by entering `y` or `n`.
+   - Choose whether to use the Tor proxy by entering `y` for yes or `n` for no.
 
-The script will then perform the following actions:
-- Start an API hunt on the specified target.
-- Conduct a port scan on the specified target.
+### Using the Shell Script
 
-### Interactive Shell
-
-1. **Open your terminal.**
-2. **Navigate to the directory containing `dokapi_shell.py`.**
+1. **Open a terminal.**
+2. **Navigate to the directory** where Dokapi is located.
 3. **Run the shell script:**
+
+   For Windows:
    ```bash
-   python dokapi_shell.py
+   launch_dokapi.bat
    ```
 
-The interactive shell provides a user-friendly interface for utilizing Dokapi's features. You can perform API hunts and port scans similar to the command line interface.
+   For Unix-based systems, you may need to create a similar script or run `dokapi.py` directly.
 
 ## Features
 
-### API Hunt
+Dokapi provides the following features:
 
-- The API hunt feature scans the specified target for available APIs. 
-- It utilizes the `recon` module to identify APIs.
+### API Hunting
+
+- **Functionality:** The tool performs API hunting on the specified target.
+- **Execution:** This is automatically initiated after entering the target URL or IP.
 
 ### Port Scanning
 
-- The port scanning feature checks for open ports on the specified target.
-- It utilizes the `ports` module to perform the scan.
+- **Functionality:** Dokapi scans for open ports on the specified target.
+- **Execution:** This is automatically initiated after the API hunting process.
 
-### Tor Proxy Support
+### Using Tor Proxy
 
-- You can choose to run the scans through the Tor network for anonymity.
-- The `tor_proxy` module manages the proxy settings.
+- **Functionality:** You can choose to route your requests through the Tor network for anonymity.
+- **Execution:** When prompted, enter `y` to enable Tor proxy usage.
 
 ## Output
 
-- The results of the API hunt and port scan will be displayed in the terminal.
-- If enabled, reports will be saved in the `Reports` directory.
+The results of the API hunt and port scan will be displayed in the terminal. If configured, reports will be saved in the `Reports` directory.
 
 ## Error Handling
 
-If an error occurs during execution, an error message will be displayed in the terminal. Ensure that the target URL or IP is valid and that you have the necessary permissions to scan the target.
+If any errors occur during execution, they will be printed to the terminal. Ensure that the target URL or IP is valid and that you have the necessary permissions to perform the scans.
