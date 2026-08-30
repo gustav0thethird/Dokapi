@@ -7,7 +7,7 @@
 
 ## Dependency Installation
 
-To install the necessary dependencies for Dokapi, you will need to use `pip`. Execute the following command in your terminal:
+To install the required dependencies for Dokapi, use the following command:
 
 ```bash
 pip install -r requirements.txt
@@ -20,6 +20,6 @@ The `requirements.txt` file includes the following packages:
 - `pyfiglet`
 - `colorama`
 
-Ensure that these dependencies are installed to enable the full functionality of Dokapi. 
+Ensure that you have these dependencies installed to run Dokapi effectively. 
 
-Once the dependencies are installed and the Tor daemon is running, you can proceed to use Dokapi for your reconnaissance tasks.
+Once the dependencies are installed and the Tor daemon is running, you can proceed to use Dokapi as intended.

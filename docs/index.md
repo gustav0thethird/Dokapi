@@ -1,33 +1,29 @@
 # Dokapi Overview
 
+Dokapi is a terminal-first reconnaissance toolkit designed for stealthy research and scanning, operating natively over Tor. It is built for users who prioritize operational security (OPSEC) in their reconnaissance activities.
+
 ![Dokapi](https://github.com/user-attachments/assets/5ab2b23b-6139-4c3d-822b-8fe05dc53650)
 
-Dokapi is a lightweight reconnaissance CLI built for OPSEC-first research. It operates natively over Tor, ensuring that all network traffic is anonymized. The toolkit is designed for stealthy reconnaissance and includes modular scanners for port scanning and passive API endpoint discovery through JavaScript analysis. Its interactive shell provides a command set with live output and colorized feedback, making it suitable for stealth audits, dark web exploration, and red team reconnaissance.
-
----
-
-### Core Features
+## Core Features
 
 - **Full Tor-native routing**  
-  Automatically routes requests through `socks5h://127.0.0.1:9050` for DNS-safe traffic anonymization.
+  Automatically routes requests through `socks5h://127.0.0.1:9050`, ensuring DNS-safe traffic anonymization.
 
 - **Modular scans**  
   Includes:
-  - Port scanning (multi-threaded)
-  - Passive API/JS endpoint discovery
+  - Multi-threaded port scanning
+  - Passive API and JavaScript endpoint discovery
 
 - **Interactive shell**  
-  Launches a styled, colorized terminal shell with modular command options and exportable results.
+  Provides a styled, colorized terminal interface with modular command options and the ability to export results.
 
 - **Privacy-prioritized design**  
-  No telemetry, minimal dependencies, and optional CSV output for offline analysis.
+  No telemetry is collected, minimal dependencies are required, and optional CSV output is available for offline analysis.
 
----
-
-### Installation
+## Installation
 
 **Requirements:**
-- Python 3.7+
+- Python 3.7 or higher
 - Tor daemon running on `127.0.0.1:9050`
 
 **Install dependencies:**
@@ -35,9 +31,7 @@ Dokapi is a lightweight reconnaissance CLI built for OPSEC-first research. It op
 pip install -r requirements.txt
 ```
 
----
-
-### Usage
+## Usage
 
 **Run quick recon:**
 ```bash
@@ -49,17 +43,13 @@ python dokapi.py
 python dokapi_shell.py
 ```
 
----
+## Output
 
-### Output
+- Live console output with color indicators
+- Optional CSV reports saved to the `/Reports/` directory
+- Automatic filename generation for organized audit logs
 
-- Console-based live output with color indicators
-- Optional CSV reports saved to `/Reports/` directory
-- Automatic filename generation for clean audit logs
-
----
-
-### Example Recon Flow
+## Example Recon Flow
 
 ```text
 Enter target URL or IP: example.com
@@ -75,9 +65,7 @@ Use Tor proxy? (y/n): y
   - 443 open
 ```
 
----
-
-### Folder Structure
+## Folder Structure
 
 ```
 Dokapi/
@@ -92,26 +80,19 @@ Dokapi/
 └── Reports/               # (Auto-created) CSV output
 ```
 
----
-
-### Potential Roadmap
+## Potential Roadmap
 
 - [ ] HTTP header recon module  
 - [ ] Subdomain/DNS recon support  
 - [ ] Plugin loader for future extensions  
 - [ ] Argparse CLI refactor  
-- [ ] Test suite for module verification
+- [ ] Test suite for module verification  
 
----
+## Disclaimer
 
-### Disclaimer
+Dokapi is a research tool intended for ethical reconnaissance and OPSEC education. Misuse may violate laws in your jurisdiction; use responsibly and only on systems you own or have permission to audit.
 
-> Dokapi is a research tool built for ethical recon and OPSEC education.  
-> Misuse may violate laws in your jurisdiction — use responsibly and only on systems you own or have permission to audit.
-
----
-
-### Links
+## Links
 
 - [GitHub Repository](https://github.com/Tahl0s/dokapi)
 - [Website](https://duskcabin.club)

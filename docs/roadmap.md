@@ -1,22 +1,20 @@
 # Potential Roadmap
 
-## Future Development Plans for Dokapi
-
-The following outlines potential features and enhancements planned for future versions of Dokapi:
+Dokapi is continuously evolving to enhance its capabilities and user experience. Below are the potential future developments and features planned for Dokapi:
 
 - [ ] **HTTP Header Recon Module**  
-  Development of a module to analyze and extract HTTP headers from target responses, enhancing the reconnaissance capabilities.
+  A dedicated module to analyze and extract HTTP headers from target responses, providing insights into server configurations and potential vulnerabilities.
 
 - [ ] **Subdomain/DNS Recon Support**  
-  Implementation of tools for discovering subdomains and performing DNS enumeration, broadening the scope of reconnaissance.
+  Implementation of tools for discovering subdomains and performing DNS reconnaissance, enabling a more comprehensive assessment of target domains.
 
 - [ ] **Plugin Loader for Future Extensions**  
-  Introduction of a plugin architecture to allow users to extend Dokapi's functionality with custom modules and features.
+  Development of a plugin architecture to allow users to create and integrate custom modules, enhancing the flexibility and extensibility of Dokapi.
 
 - [ ] **Argparse CLI Refactor**  
-  Refactoring the command-line interface to utilize the `argparse` library for improved argument parsing and user experience.
+  Refactoring the command-line interface using argparse for improved usability and better handling of command-line arguments.
 
 - [ ] **Test Suite for Module Verification**  
-  Creation of a comprehensive test suite to ensure the reliability and accuracy of each module within Dokapi.
+  Establishing a comprehensive test suite to ensure the reliability and accuracy of each module, facilitating easier maintenance and updates.
 
-These enhancements aim to improve the functionality, usability, and extensibility of Dokapi, ensuring it remains a valuable tool for ethical reconnaissance and OPSEC education.
+These features aim to expand Dokapi's functionality while maintaining its core focus on privacy and OPSEC-first research. Further updates will be provided as development progresses.

@@ -2,24 +2,47 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: Dokapi
-  description: A terminal-first reconnaissance toolkit that utilizes Tor for stealthy
-    network research and scanning.
+  description: A terminal-first reconnaissance toolkit that routes traffic through
+    Tor for stealthy research and auditing.
   annotations:
     backstage.io/techdocs-ref: dir:.
     gitlab.com/project-slug: yditj/projects/apps/Dokapi
+    yditj.home/capabilities: Full Tor-native routing; Modular scans including port
+      scanning and passive API/JS endpoint discovery; Interactive shell with modular
+      command options; Privacy-prioritized design with no telemetry and minimal dependencies
   links:
   - url: https://github.com/gustav0thethird/Dokapi
     title: GitHub
     icon: github
   tags:
   - tor
-  - recon
+  - reconnaissance
   - cli
+  - opsec
+  - scanning
   - privacy
-  - api-discovery
-  - port-scanning
 spec:
   type: tool
   lifecycle: production
   owner: gtully
   system: apps
+  providesApis:
+  - Dokapi-api
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: Dokapi-api
+  description: HTTP API exposed by Dokapi
+spec:
+  type: openapi
+  lifecycle: production
+  owner: gtully
+  definition: "openapi: 3.0.0\ninfo:\n  title: Dokapi API\n  version: 1.0.0\npaths:\n\
+    \  /api/status:\n    get:\n      summary: Potential API endpoint discovered during\
+    \ reconnaissance.\n      responses:\n        '200':\n          description: OK\n\
+    \  /v1/users:\n    get:\n      summary: Potential API endpoint discovered during\
+    \ reconnaissance.\n      responses:\n        '200':\n          description: OK\n\
+    \  /admin/panel:\n    get:\n      summary: Potential API endpoint discovered during\
+    \ reconnaissance.\n      responses:\n        '200':\n          description: OK\n"
