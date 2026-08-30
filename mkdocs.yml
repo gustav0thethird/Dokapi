@@ -3,11 +3,11 @@ site_description: Terminal-first reconnaissance shell
 plugins:
 - techdocs-core
 nav:
-- Overview: index.md
-- Usage: usage.md
+- Dokapi Overview: index.md
 - Installation: installation.md
+- Usage: usage.md
+- Core Features: features.md
 - Architecture: architecture.md
-- Port Scanning: port_scanning.md
-- API Hunting: api_hunting.md
-- Configuration: configuration.md
 - Output: output.md
+- Potential Roadmap: roadmap.md
+- Disclaimer: disclaimer.md

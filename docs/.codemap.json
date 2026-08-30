@@ -1,0 +1,46 @@
+{
+  ".gitlab-ci.yml": {
+    "sha": "a40e37e20408",
+    "summary": "Configures CI/CD pipelines for AI documentation and GitHub mirroring using templates."
+  },
+  "catalog-info.yaml": {
+    "sha": "c97361a136d5",
+    "summary": "Defines the Backstage component metadata for the Dokapi tool, including its description, links, and tags."
+  },
+  "dokapi.py": {
+    "sha": "117dd76ef92f",
+    "summary": "Implements the main functionality for API hunting and port scanning using user input."
+  },
+  "dokapi_shell.py": {
+    "sha": "3993dc6fdb2b",
+    "summary": "Provides a user interface for interacting with the Dokapi tool, including options for API hunting and port scanning."
+  },
+  "mkdocs.yml": {
+    "sha": "8f17aca37b01",
+    "summary": "Configures the MkDocs documentation site for the Dokapi project, outlining the navigation and site details."
+  },
+  "ports.py": {
+    "sha": "4897cc5a3f85",
+    "summary": "Contains functions for scanning specified port ranges on a target and reporting open ports."
+  },
+  "recon.py": {
+    "sha": "05f8e53129dc",
+    "summary": "This script hunts for potential API endpoints on a target website and saves the results to a CSV file if enabled."
+  },
+  "requirements.txt": {
+    "sha": "78eec825eced",
+    "summary": "This file lists the Python packages required for the project, including requests and BeautifulSoup."
+  },
+  "settings.py": {
+    "sha": "eefdbcef641a",
+    "summary": "This module defines settings for CSV output and includes a method to generate a safe CSV filename based on the target and scan type."
+  },
+  "tor_proxy.py": {
+    "sha": "6b4169a2dde8",
+    "summary": "This script provides a function to return proxy settings for using Tor with HTTP and HTTPS requests."
+  },
+  "utils.py": {
+    "sha": "bc5fdb24c5a3",
+    "summary": "This module contains a function to generate a timestamped CSV filename based on the scan type and target."
+  }
+}
