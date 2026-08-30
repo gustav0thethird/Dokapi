@@ -1,9 +1,13 @@
 site_name: Dokapi
 site_description: Terminal-first reconnaissance shell
-
 plugins:
-  - techdocs-core
-
+- techdocs-core
 nav:
-  - Home: index.md
-  - Readme: readme.md
+- Overview: index.md
+- Usage: usage.md
+- Installation: installation.md
+- Architecture: architecture.md
+- Port Scanning: port_scanning.md
+- API Hunting: api_hunting.md
+- Configuration: configuration.md
+- Output: output.md

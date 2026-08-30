@@ -1,0 +1,75 @@
+{
+  "pages": [
+    {
+      "path": "index.md",
+      "title": "Overview",
+      "globs": [
+        "README.md",
+        "catalog-info.yaml"
+      ],
+      "summary": "An introduction to Dokapi, its purpose, and core features."
+    },
+    {
+      "path": "usage.md",
+      "title": "Usage",
+      "globs": [
+        "dokapi.py",
+        "dokapi_shell.py"
+      ],
+      "summary": "Instructions on how to run Dokapi and utilize its features."
+    },
+    {
+      "path": "installation.md",
+      "title": "Installation",
+      "globs": [
+        "requirements.txt"
+      ],
+      "summary": "Guidelines for installing Dokapi and its dependencies."
+    },
+    {
+      "path": "architecture.md",
+      "title": "Architecture",
+      "globs": [
+        "dokapi.py",
+        "ports.py",
+        "recon.py",
+        "tor_proxy.py",
+        "settings.py",
+        "utils.py"
+      ],
+      "summary": "Overview of the main components and their interactions within Dokapi."
+    },
+    {
+      "path": "port_scanning.md",
+      "title": "Port Scanning",
+      "globs": [
+        "ports.py"
+      ],
+      "summary": "Detailed explanation of the port scanning functionality."
+    },
+    {
+      "path": "api_hunting.md",
+      "title": "API Hunting",
+      "globs": [
+        "recon.py"
+      ],
+      "summary": "Description of the API hunting feature and how it works."
+    },
+    {
+      "path": "configuration.md",
+      "title": "Configuration",
+      "globs": [
+        "settings.py"
+      ],
+      "summary": "Information on configuring Dokapi settings and options."
+    },
+    {
+      "path": "output.md",
+      "title": "Output",
+      "globs": [
+        "README.md"
+      ],
+      "summary": "Details on the output formats and reporting capabilities of Dokapi."
+    }
+  ]
+}
