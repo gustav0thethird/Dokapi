@@ -1,23 +1,15 @@
 # Disclaimer
 
-Dokapi is a research tool built for ethical reconnaissance and OPSEC education. It is designed to facilitate network research and API discovery while prioritizing user privacy. However, it is crucial to understand the legal and ethical implications of using such tools.
+Dokapi is a research tool designed for ethical reconnaissance and operational security (OPSEC) education. Users are responsible for ensuring that their use of Dokapi complies with all applicable laws and regulations in their jurisdiction.
 
-## Important Legal Considerations
+The following points outline the ethical responsibilities of users:
 
-1. **Authorization**: Always ensure that you have explicit permission to conduct reconnaissance on any system. Unauthorized access or scanning of networks can lead to severe legal consequences, including criminal charges.
+- **Legal Compliance**: Users must only utilize Dokapi on systems they own or have explicit permission to audit. Unauthorized access to computer systems is illegal and may result in severe penalties.
 
-2. **Compliance with Laws**: Familiarize yourself with the laws and regulations governing cybersecurity and data privacy in your jurisdiction. Misuse of Dokapi may violate local, national, or international laws.
+- **Ethical Use**: Dokapi is intended for legitimate research purposes, including security assessments and educational endeavors. Misuse of the tool for malicious activities, such as hacking or unauthorized data collection, is strictly prohibited.
 
-3. **Responsible Use**: Use Dokapi responsibly and ethically. It is intended for educational purposes and should only be used in environments where you have permission to operate.
+- **Privacy Considerations**: While Dokapi is designed to prioritize user privacy by routing traffic through Tor, users must remain aware of the ethical implications of their actions. Respect the privacy of individuals and organizations when conducting reconnaissance.
 
-## Ethical Considerations
+- **Accountability**: Users are accountable for their actions while using Dokapi. It is essential to act responsibly and ethically, understanding the potential impact of reconnaissance activities on others.
 
-1. **Respect Privacy**: Be mindful of the privacy of individuals and organizations. Avoid using Dokapi to infringe upon the rights of others or to engage in malicious activities.
-
-2. **Intent**: Ensure that your intent aligns with ethical standards. The tool should be used for constructive purposes, such as improving security or conducting research, rather than for malicious intent.
-
-3. **Transparency**: If you are using Dokapi in a professional or organizational context, maintain transparency with stakeholders about your activities and the tools you are using.
-
-## Conclusion
-
-Misuse of Dokapi may lead to legal repercussions and ethical violations. Always use this tool with caution, respect, and responsibility.
+By using Dokapi, you acknowledge and accept these responsibilities. Misuse of the tool may lead to legal consequences and damage to your reputation and that of the broader community. Always prioritize ethical considerations in your research and operational activities.

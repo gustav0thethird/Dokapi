@@ -1,6 +1,6 @@
 # Usage
 
-Dokapi is designed for reconnaissance tasks, allowing users to perform API hunting and port scanning through a Tor-native interface. Below are guidelines on how to run Dokapi effectively, including command examples and expected outputs.
+Dokapi is designed for reconnaissance tasks, providing a terminal-first interface that integrates seamlessly with the Tor network for enhanced privacy. Below are guidelines on how to run Dokapi effectively, including command examples and expected outputs.
 
 ## Running Dokapi
 
@@ -16,67 +16,58 @@ This command will prompt you for a target URL or IP address and whether to use t
 
 ### Starting the Interactive Shell
 
-For a more interactive experience, you can start the Dokapi shell using:
+For a more interactive experience, you can start the Dokapi shell:
 
 ```bash
 python dokapi_shell.py
 ```
 
-This will launch a styled terminal interface where you can execute various reconnaissance commands.
+This launches a styled terminal interface where you can choose from various reconnaissance options.
 
-## Example Workflow
+## Example Recon Flow
 
-When you run `dokapi.py`, you will be prompted to enter a target and whether to use Tor:
+When you run `dokapi.py`, you will be prompted as follows:
 
 ```text
 Enter target URL or IP: example.com
 Use Tor proxy? (y/n): y
 ```
 
-### Expected Outputs
-
-1. **API Hunting**:
-   After confirming the use of the Tor proxy, Dokapi will start hunting for APIs associated with the target. The output will display discovered endpoints:
+If you choose to use the Tor proxy, the tool will proceed with the reconnaissance tasks. The expected output will look like this:
 
 ```text
 [+] Starting API Hunt...
   - /api/status
   - /v1/users
   - /admin/panel
-```
 
-2. **Port Scanning**:
-   Following the API hunt, Dokapi will perform a port scan on the target. The output will indicate open ports:
-
-```text
 [+] Starting Port Scan...
   - 80 open
   - 443 open
 ```
 
-## Output Formats
+### Output Details
 
-- **Live Console Output**: The results of the reconnaissance tasks will be displayed in real-time on the console with color indicators for better readability.
-- **CSV Reports**: If enabled, results can be exported to CSV files, which are saved in the `/Reports/` directory. The filenames are automatically generated for organized audit logs.
+- **Live Console Output**: The results of the reconnaissance tasks will be displayed in real-time with color indicators for better readability.
+- **CSV Reports**: If enabled, results can be saved as CSV files in the `/Reports/` directory, with filenames generated automatically for easy audit logging.
 
 ## Folder Structure
 
-The Dokapi repository contains the following key files:
+Understanding the folder structure can help you navigate the Dokapi project:
 
 ```
 Dokapi/
-├── dokapi.py              # Main entrypoint for API hunting and port scanning
-├── dokapi_shell.py        # Interactive shell interface
-├── ports.py               # Multi-threaded port scanner implementation
+├── dokapi.py              # Main entrypoint for reconnaissance tasks
+├── dokapi_shell.py        # Interactive shell for user interaction
+├── ports.py               # Multi-threaded port scanner
 ├── recon.py               # JavaScript endpoint reconnaissance
 ├── tor_proxy.py           # Configuration for SOCKS5H proxy
-├── utils.py               # Utility functions (e.g., filename generation)
+├── utils.py               # Helper functions (e.g., filename generation)
 ├── settings.py            # Global configuration and flags
 ├── requirements.txt       # Dependencies
 └── Reports/               # Directory for CSV output
 ```
 
-## Important Notes
+## Conclusion
 
-- Ensure that the Tor daemon is running on `127.0.0.1:9050` before executing the commands.
-- Use responsibly and only on systems you own or have permission to audit, as misuse may violate laws in your jurisdiction.
+Dokapi provides a straightforward and effective way to conduct reconnaissance tasks while prioritizing user privacy through Tor integration. Use the commands and examples provided to get started with your reconnaissance efforts.

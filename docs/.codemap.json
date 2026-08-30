@@ -4,43 +4,43 @@
     "summary": "Configures CI/CD pipelines for AI documentation and GitHub mirroring using templates."
   },
   "catalog-info.yaml": {
-    "sha": "c97361a136d5",
-    "summary": "Defines the Backstage component metadata for the Dokapi tool, including its description, links, and tags."
+    "sha": "8813ac9c413a",
+    "summary": "Defines the metadata and specifications for the Dokapi component in the Backstage catalog."
   },
   "dokapi.py": {
     "sha": "117dd76ef92f",
-    "summary": "Implements the main functionality for API hunting and port scanning using user input."
+    "summary": "Implements the main functionality for reconnaissance tasks, including API hunting and port scanning."
   },
   "dokapi_shell.py": {
     "sha": "3993dc6fdb2b",
-    "summary": "Provides a user interface for interacting with the Dokapi tool, including options for API hunting and port scanning."
+    "summary": "Provides a user interface for interacting with the Dokapi tool, allowing users to choose options for API hunting and port scanning."
   },
   "mkdocs.yml": {
-    "sha": "8f17aca37b01",
-    "summary": "Configures the MkDocs documentation site for the Dokapi project, outlining the navigation and site details."
+    "sha": "ee2dabcc517e",
+    "summary": "Configures the documentation site for Dokapi, specifying the site name, description, and navigation structure."
   },
   "ports.py": {
     "sha": "4897cc5a3f85",
-    "summary": "Contains functions for scanning specified port ranges on a target and reporting open ports."
+    "summary": "Contains functions to scan specified ports on a target, reporting open ports and saving results to a CSV file."
   },
   "recon.py": {
     "sha": "05f8e53129dc",
-    "summary": "This script hunts for potential API endpoints on a target website and saves the results to a CSV file if enabled."
+    "summary": "This file contains a script that hunts for potential API endpoints on a target website and saves the results to a CSV file if enabled."
   },
   "requirements.txt": {
     "sha": "78eec825eced",
-    "summary": "This file lists the Python packages required for the project, including requests and BeautifulSoup."
+    "summary": "This file lists the Python package dependencies required for the project."
   },
   "settings.py": {
     "sha": "eefdbcef641a",
-    "summary": "This module defines settings for CSV output and includes a method to generate a safe CSV filename based on the target and scan type."
+    "summary": "This file defines configuration settings for the project, including CSV output options and a method to generate CSV filenames."
   },
   "tor_proxy.py": {
     "sha": "6b4169a2dde8",
-    "summary": "This script provides a function to return proxy settings for using Tor with HTTP and HTTPS requests."
+    "summary": "This file provides a function to return proxy settings for using Tor."
   },
   "utils.py": {
     "sha": "bc5fdb24c5a3",
-    "summary": "This module contains a function to generate a timestamped CSV filename based on the scan type and target."
+    "summary": "This file contains utility functions, including one for generating CSV filenames based on scan type and target."
   }
 }
