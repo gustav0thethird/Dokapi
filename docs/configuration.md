@@ -8,36 +8,42 @@ Dokapi's configuration is primarily managed through the `settings.py` file. The 
 
 ### CSV Output Settings
 
-- **csv_output_enabled**: This boolean setting determines whether CSV output is enabled. By default, it is set to `False`.
+- **csv_output_enabled**: 
+  - Type: Boolean
+  - Default: `False`
+  - Description: This setting determines whether CSV output is enabled. Set to `True` to enable CSV report generation.
 
-- **csv_output_directory**: This string setting specifies the directory where CSV reports will be saved. The default directory is `./Reports`.
+- **csv_output_directory**: 
+  - Type: String
+  - Default: `"./Reports"`
+  - Description: This specifies the directory where CSV reports will be saved. The directory will be created if it does not already exist.
 
-### Ensuring Reports Folder
+### Reports Folder Management
 
-The `ensure_reports_folder` class method is provided to create the reports directory if it does not already exist. It uses the `os.makedirs` function with the `exist_ok=True` parameter to ensure that the directory is created without raising an error if it already exists.
+Dokapi includes a method to ensure that the reports folder exists:
+
+- **ensure_reports_folder()**: 
+  - This class method checks for the existence of the `csv_output_directory` and creates it if it does not exist. It is advisable to call this method before attempting to generate CSV reports.
 
 ### CSV Filename Generation
 
-Dokapi includes a utility function for generating CSV filenames based on the scan type and target URL. The function `generate_csv_filename(scan_type, target)` constructs a filename using the following format:
+Dokapi provides a utility function for generating CSV filenames based on the scan type and target:
 
-```
-dokapi_{scan_type}_{safe_target}_{date}.csv
-```
+- **generate_csv_filename(scan_type, target)**: 
+  - Parameters:
+    - `scan_type`: The type of scan being performed (e.g., port scan).
+    - `target`: The target URL or IP address.
+  - Returns: A string representing the filename formatted as `dokapi_{scan_type}_{safe_target}_{date}.csv`, where `safe_target` replaces `http://`, `https://`, and `/` with underscores, and `date` is the current date in `YYYY-MM-DD` format.
 
-- **scan_type**: The type of scan being performed.
-- **target**: The target URL, which is sanitized by removing `http://`, `https://`, and replacing slashes with underscores.
-- **date**: The current date in the format `YYYY-MM-DD`.
+### Example Usage
 
-This function ensures that the generated filenames are unique and informative, making it easier to identify reports.
-
-## Example Usage
-
-To enable CSV output and specify a custom directory, you can modify the settings as follows:
+To enable CSV output and ensure the reports folder exists, you can use the following code snippet:
 
 ```python
+from settings import Settings
+
 Settings.csv_output_enabled = True
-Settings.csv_output_directory = "./CustomReports"
 Settings.ensure_reports_folder()
 ```
 
-This configuration will enable CSV output and create a directory named `CustomReports` for storing the reports.
+This configuration will prepare Dokapi to generate CSV reports in the specified directory.

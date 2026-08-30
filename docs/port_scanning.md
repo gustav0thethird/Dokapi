@@ -1,41 +1,60 @@
 # Port Scanning
 
-The port scanning functionality in Dokapi allows users to identify open ports on a specified target. This feature is implemented in the `ports.py` file and utilizes Python's `socket` library to perform the scans.
+The port scanning functionality in Dokapi allows users to identify open ports on a specified target. This feature is implemented in the `ports.py` module and utilizes Python's `socket` library to perform the scans.
 
 ## Functionality Overview
 
 ### Scanning Process
 
-1. **Input Port Range**: The user is prompted to enter a range of ports to scan. The expected format is `start-end`, where both `start` and `end` are integers between 0 and 65535. If the input is invalid, a default set of ports (80, 443, 8080, 8443) is used.
+1. **Input Port Range**: The user is prompted to enter a range of ports to scan. The input format should be `start-end` (e.g., `20-1000`). If the input is invalid, a default set of ports (80, 443, 8080, 8443) is used.
 
-2. **Port Scanning**: The scanning is performed using a thread pool to enhance performance. The `scan_port` function attempts to connect to each port in the specified range. If the connection is successful (indicated by a result of 0), the port is considered open.
+2. **Port Scanning**: The `scan_ports` function initiates the scanning process. It creates a list of ports based on the user input or defaults. The function then uses a `ThreadPoolExecutor` to scan multiple ports concurrently, improving efficiency.
 
-3. **Concurrency**: The scanning process employs `ThreadPoolExecutor` to manage multiple threads, allowing simultaneous scanning of ports. This is particularly useful for large ranges, as it significantly reduces the time required to complete the scan.
+3. **Port Check**: Each port is checked using the `scan_port` function, which attempts to establish a TCP connection to the target on the specified port. If the connection is successful (indicated by a return value of `0`), the port is considered open.
 
-4. **Progress Tracking**: The `tqdm` library is used to provide a progress bar during the scanning process, giving users visual feedback on the scan's progress.
+4. **Results Compilation**: After scanning, the results are compiled. If open ports are found, they are displayed to the user. If no open ports are detected, a corresponding message is shown.
 
-### Output
+5. **CSV Output**: If CSV output is enabled in the settings, the results are saved to a CSV file. The file includes the target, date, type of scan, and results for each port.
 
-- **Open Ports**: After scanning, the program outputs a list of open ports found on the target. If no open ports are detected, a message indicating this is displayed.
+### Code Implementation
 
-- **CSV Output**: If enabled in the settings, the results of the scan are saved to a CSV file. The filename is generated based on the target and includes a timestamp. The CSV file contains the following columns:
-  - Target
-  - Date
-  - Type (always "Port Scan")
-  - Result (either the open port number or "No open ports")
+- **scan_port(target, port)**: This function attempts to connect to a specified port on the target. It returns the port number if successful or `None` if unsuccessful.
 
-### Code Structure
-
-- **scan_port(target, port)**: This function attempts to connect to a specified port on the target. It returns the port number if the connection is successful; otherwise, it returns `None`.
-
-- **scan_ports(target)**: This function orchestrates the port scanning process. It handles user input for the port range, manages the threading for scanning, collects results, and handles CSV output.
+- **scan_ports(target)**: This function handles user input for the port range, manages the scanning process, and compiles results. It also handles CSV output if configured.
 
 ### Example Usage
 
-To initiate a port scan, the user runs the `scan_ports` function with the desired target IP address or hostname. The user will be prompted to enter a port range, and the scan will commence.
+To initiate a port scan, the user will be prompted to enter a port range. The following is a typical interaction:
+
+```
+[!] Tip: Enter range like '20-1000' or '1-65535'!
+Enter port range to scan (e.g., 20-1000): 20-100
+[*] Scanning 81 ports...
+[+] Open ports on target:
+  - Port 22
+  - Port 80
+```
+
+### Output
+
+The results of the scan are printed to the console. If CSV output is enabled, a file will be created in the specified directory, containing the scan results.
 
 ### Error Handling
 
-The implementation includes basic error handling for invalid input formats and exceptions that may occur during socket operations. If an error occurs, the user is notified, and the scan defaults to the predefined set of ports.
+The implementation includes basic error handling for invalid input formats and connection issues. If an invalid port range is entered, the user is notified, and the default ports are used instead.
 
-This functionality is crucial for network reconnaissance and security assessments, allowing users to identify potential vulnerabilities in their systems.
+### Dependencies
+
+This functionality requires the following Python modules:
+- `socket`
+- `datetime`
+- `csv`
+- `os`
+- `concurrent.futures`
+- `tqdm`
+
+### Configuration
+
+CSV output can be configured through the `Settings` module. Ensure that the output directory exists or is created during the scan process.
+
+This concludes the detailed explanation of the port scanning functionality in Dokapi. For further information, refer to the other documentation pages.
