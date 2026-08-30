@@ -1,59 +1,82 @@
 # Usage
 
+Dokapi is designed for reconnaissance tasks, allowing users to perform API hunting and port scanning through a Tor-native interface. Below are guidelines on how to run Dokapi effectively, including command examples and expected outputs.
+
 ## Running Dokapi
 
-To run Dokapi, you can use either the command line interface or the provided shell script. Follow the instructions below for both methods.
+### Quick Recon
 
-### Command Line Interface
+To initiate a quick reconnaissance task, run the following command:
 
-1. **Open a terminal.**
-2. **Navigate to the directory** where Dokapi is located.
-3. **Run the following command:**
+```bash
+python dokapi.py
+```
 
-   ```bash
-   python dokapi.py
-   ```
+This command will prompt you for a target URL or IP address and whether to use the Tor proxy.
 
-4. **Input the required information:**
-   - Enter the target URL or IP address when prompted.
-   - Choose whether to use the Tor proxy by entering `y` for yes or `n` for no.
+### Starting the Interactive Shell
 
-### Using the Shell Script
+For a more interactive experience, you can start the Dokapi shell using:
 
-1. **Open a terminal.**
-2. **Navigate to the directory** where Dokapi is located.
-3. **Run the shell script:**
+```bash
+python dokapi_shell.py
+```
 
-   For Windows:
-   ```bash
-   launch_dokapi.bat
-   ```
+This will launch a styled terminal interface where you can execute various reconnaissance commands.
 
-   For Unix-based systems, you may need to create a similar script or run `dokapi.py` directly.
+## Example Workflow
 
-## Features
+When you run `dokapi.py`, you will be prompted to enter a target and whether to use Tor:
 
-Dokapi provides the following features:
+```text
+Enter target URL or IP: example.com
+Use Tor proxy? (y/n): y
+```
 
-### API Hunting
+### Expected Outputs
 
-- **Functionality:** The tool performs API hunting on the specified target.
-- **Execution:** This is automatically initiated after entering the target URL or IP.
+1. **API Hunting**:
+   After confirming the use of the Tor proxy, Dokapi will start hunting for APIs associated with the target. The output will display discovered endpoints:
 
-### Port Scanning
+```text
+[+] Starting API Hunt...
+  - /api/status
+  - /v1/users
+  - /admin/panel
+```
 
-- **Functionality:** Dokapi scans for open ports on the specified target.
-- **Execution:** This is automatically initiated after the API hunting process.
+2. **Port Scanning**:
+   Following the API hunt, Dokapi will perform a port scan on the target. The output will indicate open ports:
 
-### Using Tor Proxy
+```text
+[+] Starting Port Scan...
+  - 80 open
+  - 443 open
+```
 
-- **Functionality:** You can choose to route your requests through the Tor network for anonymity.
-- **Execution:** When prompted, enter `y` to enable Tor proxy usage.
+## Output Formats
 
-## Output
+- **Live Console Output**: The results of the reconnaissance tasks will be displayed in real-time on the console with color indicators for better readability.
+- **CSV Reports**: If enabled, results can be exported to CSV files, which are saved in the `/Reports/` directory. The filenames are automatically generated for organized audit logs.
 
-The results of the API hunt and port scan will be displayed in the terminal. If configured, reports will be saved in the `Reports` directory.
+## Folder Structure
 
-## Error Handling
+The Dokapi repository contains the following key files:
 
-If any errors occur during execution, they will be printed to the terminal. Ensure that the target URL or IP is valid and that you have the necessary permissions to perform the scans.
+```
+Dokapi/
+├── dokapi.py              # Main entrypoint for API hunting and port scanning
+├── dokapi_shell.py        # Interactive shell interface
+├── ports.py               # Multi-threaded port scanner implementation
+├── recon.py               # JavaScript endpoint reconnaissance
+├── tor_proxy.py           # Configuration for SOCKS5H proxy
+├── utils.py               # Utility functions (e.g., filename generation)
+├── settings.py            # Global configuration and flags
+├── requirements.txt       # Dependencies
+└── Reports/               # Directory for CSV output
+```
+
+## Important Notes
+
+- Ensure that the Tor daemon is running on `127.0.0.1:9050` before executing the commands.
+- Use responsibly and only on systems you own or have permission to audit, as misuse may violate laws in your jurisdiction.
